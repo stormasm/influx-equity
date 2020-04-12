@@ -1,4 +1,6 @@
 
+### Write Data to Influx
+
 ```
 cd csv/examples/data/out
 Either syntax works for files.
@@ -6,18 +8,20 @@ influx write @ui.txt
 influx write -f ui.txt
 ```
 
+### Query data from Influx
+
 ```
 influx query '-o=ag' @ex00.txt
-```
 
-And if you set up .influxenv this way....
+And if you set up your environment this way....
 
-```
+env | grep INFLUX
 export INFLUX_ORG=ag
-```
 
-```
+cd query
+Either syntax works for files
 influx query @ex00.txt
+influx query -f ex00.txt
 ```
 
 ex00.txt is the 200 day moving average...
