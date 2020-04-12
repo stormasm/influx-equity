@@ -1,11 +1,15 @@
 
+```
+alias infw='influx write -b rick -o ag -p s'
+```
+
 ### Write Data to Influx
 
 ```
 cd csv/examples/data/out
 Either syntax works for files.
-influx write @ui.txt
-influx write -f ui.txt
+infw @ui.txt
+infw -f ui.txt
 ```
 
 ### Query data from Influx
@@ -13,10 +17,9 @@ influx write -f ui.txt
 ```
 influx query '-o=ag' @ex00.txt
 
-And if you set up your environment this way....
+And if you set up your environment see further down in this file...
 
 env | grep INFLUX
-export INFLUX_ORG=ag
 
 cd query
 Either syntax works for files
@@ -41,3 +44,14 @@ and testing and updating the data sets with the most recent equity data.
 The reason this copy is here is because I did not want to pollute the
 original development repo with continual data updates so it is done
 here instead.
+
+Locally I have a file called .influxenv which looks like this
+
+export INFLUX_TOKEN=ieL6P0KeyZ_DKlxGQiv1VSZELOolY8ISSFVqZX8uw5e-eBolJdnlCUiByAVjoZety-EQPTkaAGveKo-aHjK03Q==
+export INFLUX_ORG=ag
+export INFLUX_BUCKET_NAME=rick
+
+To delete a measurement this command works
+```
+influx delete -p _measurement="ui" --start="2009-01-02T23:00:00Z" --stop="2020-04-12T23:00:00Z"
+```
