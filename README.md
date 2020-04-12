@@ -47,9 +47,11 @@ here instead.
 
 Locally I have a file called .influxenv which looks like this
 
+```
 export INFLUX_TOKEN=ieL6P0KeyZ_DKlxGQiv1VSZELOolY8ISSFVqZX8uw5e-eBolJdnlCUiByAVjoZety-EQPTkaAGveKo-aHjK03Q==
 export INFLUX_ORG=ag
 export INFLUX_BUCKET_NAME=rick
+```
 
 To delete a measurement this command works
 ```
