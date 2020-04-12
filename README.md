@@ -57,3 +57,9 @@ To delete a measurement this command works
 ```
 influx delete -p _measurement="ui" --start="2009-01-02T23:00:00Z" --stop="2020-04-12T23:00:00Z"
 ```
+
+and now an alias exists for it as well....
+
+```
+alias infdm="influx delete -p _measurement=\"ui\" --start=\"2009-01-02T23:00:00Z\" --stop=\"2020-04-12T23:00:00Z\""
+```
