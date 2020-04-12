@@ -1,4 +1,27 @@
 
+```
+cd csv/examples/data/out
+Either syntax works for files.
+influx write @ui.txt
+influx write -f ui.txt
+```
+
+```
+influx query '-o=ag' @ex00.txt
+```
+
+And if you set up .influxenv this way....
+
+```
+export INFLUX_ORG=ag
+```
+
+```
+influx query @ex00.txt
+```
+
+ex00.txt is the 200 day moving average...
+
 The data input file comes from
 [here.](https://github.com/stormasm/influx-equity/tree/master/csv/examples/data/out)
 
