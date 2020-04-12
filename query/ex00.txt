@@ -1,0 +1,6 @@
+from(bucket: "rick")
+  |> range(start: -200d, stop: -1d)
+  |> filter(fn: (r) => r._measurement == "ui")
+  |> filter(fn: (r) => r._field == "close")
+  |> mean()
+  |> yield(name: "mean")
